@@ -2,6 +2,11 @@ from rest_framework import viewsets
 from rest_framework import permissions
 from library.books.serializers import *
 
+class ThingViewSet(viewsets.ModelViewSet):
+    queryset = Thing.objects.all().order_by('id')
+    serializer_class = ThingSerializer
+    permission_classes = []
+
 class AuthorViewSet(viewsets.ModelViewSet):
     queryset = Author.objects.all().order_by('name')
     serializer_class = AuthorSerializer
