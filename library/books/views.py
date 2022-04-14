@@ -1,6 +1,27 @@
 from rest_framework import viewsets
 from rest_framework import permissions
+import base64
+from rest_framework.response import Response
 from library.books.serializers import *
+
+# # class ThingViewSet(viewsets.ModelViewSet):
+# #     queryset = Thing.objects.all().order_by('id')
+# #     serializer_class = ThingSerializer
+# #     def create(self, request, *args):
+# #         name = request.data['name']
+# #         image = base64.b64encode(request.data['image'])
+# #         sz = serializer_class.create(name = name, image = image)
+# #         print('SERIALIZER', sz)
+# #         response = Response()
+
+# #         response.data = {
+# #             'name': name,
+# #             # 'image': 
+# #         }
+
+# #         return response
+
+#     permission_classes = []
 
 class ThingViewSet(viewsets.ModelViewSet):
     queryset = Thing.objects.all().order_by('id')
